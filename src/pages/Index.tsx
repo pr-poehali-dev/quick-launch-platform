@@ -5,9 +5,12 @@ import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Icon from '@/components/ui/icon';
 
 export default function Index() {
+  const [selectedCategory, setSelectedCategory] = useState('ecommerce');
+  
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -138,71 +141,214 @@ export default function Index() {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4" variant="outline">Тарифы</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Выберите свой план</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Выберите тип бизнеса</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Прозрачные цены без скрытых комиссий. Начните бесплатно
+              Специализированные решения для вашей ниши. Прозрачные цены без скрытых комиссий
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                name: 'Старт',
-                price: '0',
-                period: 'навсегда',
-                description: 'Идеально для тестирования идеи',
-                features: ['До 100 заказов/месяц', 'Базовая аналитика', 'Email поддержка', 'Мобильная версия'],
-                highlighted: false,
-              },
-              {
-                name: 'Рост',
-                price: '2,990',
-                period: 'в месяц',
-                description: 'Для растущего бизнеса',
-                features: ['До 1000 заказов/месяц', 'Расширенная аналитика', 'Приоритетная поддержка 24/7', 'CRM система', 'API доступ', 'Собственный домен'],
-                highlighted: true,
-              },
-              {
-                name: 'Масштаб',
-                price: '9,990',
-                period: 'в месяц',
-                description: 'Для крупного бизнеса',
-                features: ['Неограниченно заказов', 'AI аналитика', 'Персональный менеджер', 'Все возможности платформы', 'SLA 99.99%', 'Индивидуальные интеграции'],
-                highlighted: false,
-              },
-            ].map((plan) => (
-              <Card key={plan.name} className={`relative ${plan.highlighted ? 'border-primary border-2 shadow-xl scale-105' : ''}`}>
-                {plan.highlighted && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-gradient-to-r from-primary to-secondary text-white">
-                      Популярный
-                    </Badge>
-                  </div>
-                )}
-                <CardHeader>
-                  <CardTitle className="text-2xl">{plan.name}</CardTitle>
-                  <CardDescription>{plan.description}</CardDescription>
-                  <div className="mt-4">
-                    <span className="text-4xl font-bold">{plan.price} ₽</span>
-                    <span className="text-muted-foreground ml-2">{plan.period}</span>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <Button className="w-full mb-6" variant={plan.highlighted ? 'default' : 'outline'}>
-                    Выбрать план
-                  </Button>
-                  <ul className="space-y-3">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-2">
-                        <Icon name="Check" size={20} className="text-primary mt-0.5" />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <Tabs defaultValue="ecommerce" className="max-w-6xl mx-auto" onValueChange={(value) => setSelectedCategory(value)}>
+            <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-3 mb-12 h-auto">
+              <TabsTrigger value="ecommerce" className="flex flex-col items-center gap-2 py-4">
+                <Icon name="ShoppingCart" size={24} />
+                <span className="text-sm font-medium">Онлайн-магазин</span>
+              </TabsTrigger>
+              <TabsTrigger value="booking" className="flex flex-col items-center gap-2 py-4">
+                <Icon name="Calendar" size={24} />
+                <span className="text-sm font-medium">Бронирование услуг</span>
+              </TabsTrigger>
+              <TabsTrigger value="courses" className="flex flex-col items-center gap-2 py-4">
+                <Icon name="GraduationCap" size={24} />
+                <span className="text-sm font-medium">Онлайн-курсы</span>
+              </TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="ecommerce" className="mt-0">
+              <div className="grid md:grid-cols-3 gap-8">
+                {[
+                  {
+                    name: 'Старт',
+                    price: '0',
+                    period: 'навсегда',
+                    description: 'Для тестирования идеи',
+                    features: ['До 50 товаров', 'До 100 заказов/мес', 'Базовая аналитика', 'Каталог и корзина', 'Email поддержка'],
+                    highlighted: false,
+                  },
+                  {
+                    name: 'Магазин',
+                    price: '3,990',
+                    period: 'в месяц',
+                    description: 'Для растущего магазина',
+                    features: ['До 500 товаров', 'До 1000 заказов/мес', 'Интеграция с оплатой', 'Управление складом', 'CRM и промокоды', 'Поддержка 24/7'],
+                    highlighted: true,
+                  },
+                  {
+                    name: 'Маркетплейс',
+                    price: '12,990',
+                    period: 'в месяц',
+                    description: 'Для масштабной торговли',
+                    features: ['Неограниченно товаров', 'Неограниченно заказов', 'Мультивалютность', 'AI рекомендации', 'Интеграция с 1С', 'Персональный менеджер'],
+                    highlighted: false,
+                  },
+                ].map((plan) => (
+                  <Card key={plan.name} className={`relative ${plan.highlighted ? 'border-primary border-2 shadow-xl scale-105' : ''}`}>
+                    {plan.highlighted && (
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                        <Badge className="bg-gradient-to-r from-primary to-secondary text-white">
+                          Популярный
+                        </Badge>
+                      </div>
+                    )}
+                    <CardHeader>
+                      <CardTitle className="text-2xl">{plan.name}</CardTitle>
+                      <CardDescription>{plan.description}</CardDescription>
+                      <div className="mt-4">
+                        <span className="text-4xl font-bold">{plan.price} ₽</span>
+                        <span className="text-muted-foreground ml-2">{plan.period}</span>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <Button className="w-full mb-6" variant={plan.highlighted ? 'default' : 'outline'}>
+                        Выбрать план
+                      </Button>
+                      <ul className="space-y-3">
+                        {plan.features.map((feature) => (
+                          <li key={feature} className="flex items-start gap-2">
+                            <Icon name="Check" size={20} className="text-primary mt-0.5 flex-shrink-0" />
+                            <span className="text-sm">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="booking" className="mt-0">
+              <div className="grid md:grid-cols-3 gap-8">
+                {[
+                  {
+                    name: 'Старт',
+                    price: '0',
+                    period: 'навсегда',
+                    description: 'Для начинающих',
+                    features: ['1 специалист', 'До 50 записей/мес', 'Календарь записи', 'SMS уведомления', 'Email поддержка'],
+                    highlighted: false,
+                  },
+                  {
+                    name: 'Бизнес',
+                    price: '2,490',
+                    period: 'в месяц',
+                    description: 'Для сервисного бизнеса',
+                    features: ['До 10 специалистов', 'До 500 записей/мес', 'Онлайн-оплата', 'CRM клиентов', 'Управление графиком', 'Поддержка 24/7'],
+                    highlighted: true,
+                  },
+                  {
+                    name: 'Сеть',
+                    price: '8,990',
+                    period: 'в месяц',
+                    description: 'Для сети филиалов',
+                    features: ['Неограниченно специалистов', 'Неограниченно записей', 'Мультифилиальность', 'AI оптимизация загрузки', 'Программа лояльности', 'Персональный менеджер'],
+                    highlighted: false,
+                  },
+                ].map((plan) => (
+                  <Card key={plan.name} className={`relative ${plan.highlighted ? 'border-primary border-2 shadow-xl scale-105' : ''}`}>
+                    {plan.highlighted && (
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                        <Badge className="bg-gradient-to-r from-primary to-secondary text-white">
+                          Популярный
+                        </Badge>
+                      </div>
+                    )}
+                    <CardHeader>
+                      <CardTitle className="text-2xl">{plan.name}</CardTitle>
+                      <CardDescription>{plan.description}</CardDescription>
+                      <div className="mt-4">
+                        <span className="text-4xl font-bold">{plan.price} ₽</span>
+                        <span className="text-muted-foreground ml-2">{plan.period}</span>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <Button className="w-full mb-6" variant={plan.highlighted ? 'default' : 'outline'}>
+                        Выбрать план
+                      </Button>
+                      <ul className="space-y-3">
+                        {plan.features.map((feature) => (
+                          <li key={feature} className="flex items-start gap-2">
+                            <Icon name="Check" size={20} className="text-primary mt-0.5 flex-shrink-0" />
+                            <span className="text-sm">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="courses" className="mt-0">
+              <div className="grid md:grid-cols-3 gap-8">
+                {[
+                  {
+                    name: 'Старт',
+                    price: '0',
+                    period: 'навсегда',
+                    description: 'Для первого курса',
+                    features: ['1 курс', 'До 50 студентов', 'Видео-уроки', 'Тесты и задания', 'Email поддержка'],
+                    highlighted: false,
+                  },
+                  {
+                    name: 'Школа',
+                    price: '4,990',
+                    period: 'в месяц',
+                    description: 'Для онлайн-школы',
+                    features: ['До 20 курсов', 'До 500 студентов', 'Вебинары и трансляции', 'Сертификаты', 'Геймификация', 'Поддержка 24/7'],
+                    highlighted: true,
+                  },
+                  {
+                    name: 'Академия',
+                    price: '14,990',
+                    period: 'в месяц',
+                    description: 'Для крупной платформы',
+                    features: ['Неограниченно курсов', 'Неограниченно студентов', 'AI наставник', 'Мобильное приложение', 'White label', 'Персональный менеджер'],
+                    highlighted: false,
+                  },
+                ].map((plan) => (
+                  <Card key={plan.name} className={`relative ${plan.highlighted ? 'border-primary border-2 shadow-xl scale-105' : ''}`}>
+                    {plan.highlighted && (
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                        <Badge className="bg-gradient-to-r from-primary to-secondary text-white">
+                          Популярный
+                        </Badge>
+                      </div>
+                    )}
+                    <CardHeader>
+                      <CardTitle className="text-2xl">{plan.name}</CardTitle>
+                      <CardDescription>{plan.description}</CardDescription>
+                      <div className="mt-4">
+                        <span className="text-4xl font-bold">{plan.price} ₽</span>
+                        <span className="text-muted-foreground ml-2">{plan.period}</span>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <Button className="w-full mb-6" variant={plan.highlighted ? 'default' : 'outline'}>
+                        Выбрать план
+                      </Button>
+                      <ul className="space-y-3">
+                        {plan.features.map((feature) => (
+                          <li key={feature} className="flex items-start gap-2">
+                            <Icon name="Check" size={20} className="text-primary mt-0.5 flex-shrink-0" />
+                            <span className="text-sm">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </section>
 
