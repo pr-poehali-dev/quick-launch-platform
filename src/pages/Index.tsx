@@ -80,6 +80,131 @@ export default function Index() {
         </div>
       </section>
 
+      <section className="py-20 px-4">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <Badge className="mb-4" variant="secondary">
+              <Icon name="Sparkles" size={16} className="mr-2" />
+              Технологии будущего
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Создавайте сайты легко</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              AI ассистент и визуальный конструктор делают разработку сайтов доступной каждому
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0">
+                  <Icon name="Bot" size={24} className="text-white" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-2">AI Ассистент</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Просто опишите свой бизнес — ассистент создаст полноценный сайт за минуты. 
+                    Подберёт дизайн, структуру, напишет тексты и настроит всё автоматически.
+                  </p>
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2">
+                      <Icon name="Check" size={18} className="text-primary" />
+                      <span className="text-sm">Генерация контента на основе ИИ</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Icon name="Check" size={18} className="text-primary" />
+                      <span className="text-sm">Автоподбор дизайна под вашу нишу</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Icon name="Check" size={18} className="text-primary" />
+                      <span className="text-sm">Мгновенные правки по команде</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0">
+                  <Icon name="MousePointerClick" size={24} className="text-white" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-2">Drag & Drop конструктор</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Перетаскивайте элементы, меняйте цвета и шрифты в реальном времени. 
+                    Никакого кода — только ваше творчество.
+                  </p>
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2">
+                      <Icon name="Check" size={18} className="text-primary" />
+                      <span className="text-sm">100+ готовых блоков и компонентов</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Icon name="Check" size={18} className="text-primary" />
+                      <span className="text-sm">Адаптивность под все устройства</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Icon name="Check" size={18} className="text-primary" />
+                      <span className="text-sm">Предпросмотр в реальном времени</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-primary/20">
+                <div className="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 aspect-video flex items-center justify-center relative">
+                  <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgwLDAsMCwwLjA1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40"></div>
+                  
+                  <div className="relative w-full max-w-md space-y-4 animate-fade-in">
+                    <Card className="animate-scale-in">
+                      <CardHeader className="pb-3">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary animate-pulse"></div>
+                          <div className="flex-1 space-y-2">
+                            <div className="h-3 bg-muted rounded w-3/4 animate-pulse"></div>
+                            <div className="h-2 bg-muted rounded w-1/2 animate-pulse"></div>
+                          </div>
+                        </div>
+                      </CardHeader>
+                    </Card>
+
+                    <Card className="animate-scale-in" style={{ animationDelay: '0.2s' }}>
+                      <CardContent className="pt-6 space-y-3">
+                        <div className="h-4 bg-primary/20 rounded w-full"></div>
+                        <div className="h-4 bg-primary/20 rounded w-5/6"></div>
+                        <div className="h-4 bg-primary/20 rounded w-4/6"></div>
+                      </CardContent>
+                    </Card>
+
+                    <div className="flex gap-2 animate-scale-in" style={{ animationDelay: '0.4s' }}>
+                      <div className="flex-1 h-10 bg-primary/30 rounded-lg"></div>
+                      <div className="flex-1 h-10 bg-secondary/30 rounded-lg"></div>
+                    </div>
+                  </div>
+
+                  <div className="absolute bottom-6 right-6">
+                    <Button size="lg" className="shadow-xl">
+                      <Icon name="Play" size={20} className="mr-2" />
+                      Смотреть демо
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute -bottom-6 -right-6 bg-gradient-to-br from-primary to-secondary p-6 rounded-2xl shadow-xl max-w-xs">
+                <div className="flex items-center gap-3 text-white">
+                  <Icon name="Sparkles" size={32} />
+                  <div>
+                    <div className="font-bold text-lg">Создано за 2 минуты</div>
+                    <div className="text-sm opacity-90">С помощью AI ассистента</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="возможности" className="py-20 px-4 bg-muted/50">
         <div className="container mx-auto">
           <div className="text-center mb-16">
