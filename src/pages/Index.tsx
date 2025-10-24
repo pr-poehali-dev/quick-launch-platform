@@ -93,9 +93,22 @@ export default function Index() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                icon: 'Zap',
-                title: 'Быстрый старт',
-                description: 'Запустите бизнес за считанные часы с готовыми шаблонами и инструментами'
+                icon: 'Bot',
+                title: 'AI Ассистент',
+                description: 'Умный помощник создаст сайт по вашему описанию, подберёт дизайн и напишет контент',
+                highlighted: true
+              },
+              {
+                icon: 'MousePointerClick',
+                title: 'Конструктор Drag & Drop',
+                description: 'Интуитивно понятный визуальный редактор для создания сайтов без программирования',
+                highlighted: true
+              },
+              {
+                icon: 'LayoutTemplate',
+                title: 'Готовые шаблоны',
+                description: 'Профессионально разработанные шаблоны для различных видов бизнеса, которые легко настроить',
+                highlighted: true
               },
               {
                 icon: 'Shield',
@@ -122,13 +135,21 @@ export default function Index() {
                 title: 'Мобильная версия',
                 description: 'Адаптивный дизайн и мобильное приложение для управления на ходу'
               },
+              {
+                icon: 'Zap',
+                title: 'Быстрый старт',
+                description: 'Запустите бизнес за считанные часы с готовыми шаблонами и инструментами'
+              },
             ].map((feature, i) => (
-              <Card key={i} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-2">
+              <Card key={i} className={`hover:shadow-lg transition-all duration-300 hover:-translate-y-1 ${feature.highlighted ? 'border-primary border-2 bg-primary/5' : 'border-2'}`}>
                 <CardHeader>
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-4">
                     <Icon name={feature.icon} size={24} className="text-white" />
                   </div>
-                  <CardTitle className="text-xl">{feature.title}</CardTitle>
+                  <CardTitle className="text-xl flex items-center gap-2">
+                    {feature.title}
+                    {feature.highlighted && <Badge variant="secondary" className="text-xs">Новое</Badge>}
+                  </CardTitle>
                   <CardDescription className="text-base">{feature.description}</CardDescription>
                 </CardHeader>
               </Card>
