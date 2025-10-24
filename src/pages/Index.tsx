@@ -827,6 +827,158 @@ export default function Index() {
         </div>
       </section>
 
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <Badge className="mb-4" variant="outline">
+              <Icon name="Award" size={16} className="mr-2" />
+              Почему мы лучше
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">В чём отличие от конкурентов</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Мы объединили лучшее из мира конструкторов и профессиональной разработки
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8 mb-12">
+            <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all">
+              <CardHeader>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0">
+                    <Icon name="Wand2" size={24} className="text-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-2xl mb-2">LaunchPad</CardTitle>
+                    <CardDescription className="text-base">Современная платформа с AI</CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold mb-1">AI помощник создаёт сайт за минуты</div>
+                    <div className="text-sm text-muted-foreground">Вы описываете идею — мы делаем сайт</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold mb-1">Полный контроль над дизайном</div>
+                    <div className="text-sm text-muted-foreground">Drag & Drop + доступ к коду при необходимости</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold mb-1">Специализация под нишу</div>
+                    <div className="text-sm text-muted-foreground">Отдельные решения для e-commerce, курсов, услуг, блогов</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold mb-1">Техподдержка 24/7 на русском</div>
+                    <div className="text-sm text-muted-foreground">Реальные люди отвечают за 3 минуты</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold mb-1">Прозрачное ценообразование</div>
+                    <div className="text-sm text-muted-foreground">Нет скрытых комиссий и процентов с продаж</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Icon name="Check" size={20} className="text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold mb-1">Бесплатный перенос</div>
+                    <div className="text-sm text-muted-foreground">Переезжайте с любой платформы без потерь</div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center flex-shrink-0">
+                    <Icon name="X" size={24} className="text-muted-foreground" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-2xl mb-2">Другие платформы</CardTitle>
+                    <CardDescription className="text-base">Традиционные конструкторы</CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <Icon name="X" size={20} className="text-muted-foreground mt-1 flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold mb-1 text-muted-foreground">Ручная настройка каждой детали</div>
+                    <div className="text-sm text-muted-foreground">Часы работы с шаблонами и элементами</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Icon name="X" size={20} className="text-muted-foreground mt-1 flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold mb-1 text-muted-foreground">Ограниченная кастомизация</div>
+                    <div className="text-sm text-muted-foreground">Или сайт по шаблону, или сложный код</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Icon name="X" size={20} className="text-muted-foreground mt-1 flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold mb-1 text-muted-foreground">Универсальное решение</div>
+                    <div className="text-sm text-muted-foreground">Одна платформа для всех без учёта специфики</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Icon name="X" size={20} className="text-muted-foreground mt-1 flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold mb-1 text-muted-foreground">Медленная поддержка</div>
+                    <div className="text-sm text-muted-foreground">Ответ по email через 24-48 часов</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Icon name="X" size={20} className="text-muted-foreground mt-1 flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold mb-1 text-muted-foreground">Скрытые комиссии</div>
+                    <div className="text-sm text-muted-foreground">Процент с каждой транзакции или продажи</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Icon name="X" size={20} className="text-muted-foreground mt-1 flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold mb-1 text-muted-foreground">Сложная миграция</div>
+                    <div className="text-sm text-muted-foreground">Нужно пересоздавать сайт с нуля</div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="bg-gradient-to-br from-primary to-secondary rounded-2xl p-8 md:p-12 text-white text-center">
+            <h3 className="text-3xl md:text-4xl font-bold mb-4">
+              Попробуйте бесплатно прямо сейчас
+            </h3>
+            <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
+              Создайте свой первый сайт за 10 минут. Без кредитной карты, без обязательств
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" variant="secondary" className="text-lg px-8">
+                Начать бесплатно
+                <Icon name="ArrowRight" size={20} className="ml-2" />
+              </Button>
+              <Button size="lg" variant="outline" className="text-lg px-8 bg-white/10 hover:bg-white/20 border-white/30 text-white">
+                Связаться с нами
+                <Icon name="MessageSquare" size={20} className="ml-2" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <footer className="border-t py-12 px-4">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
