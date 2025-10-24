@@ -148,18 +148,22 @@ export default function Index() {
           </div>
 
           <Tabs defaultValue="ecommerce" className="max-w-6xl mx-auto" onValueChange={(value) => setSelectedCategory(value)}>
-            <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-3 mb-12 h-auto">
+            <TabsList className="grid w-full max-w-3xl mx-auto grid-cols-2 md:grid-cols-4 mb-12 h-auto">
               <TabsTrigger value="ecommerce" className="flex flex-col items-center gap-2 py-4">
                 <Icon name="ShoppingCart" size={24} />
                 <span className="text-sm font-medium">Онлайн-магазин</span>
               </TabsTrigger>
               <TabsTrigger value="booking" className="flex flex-col items-center gap-2 py-4">
                 <Icon name="Calendar" size={24} />
-                <span className="text-sm font-medium">Бронирование услуг</span>
+                <span className="text-sm font-medium">Бронирование</span>
               </TabsTrigger>
               <TabsTrigger value="courses" className="flex flex-col items-center gap-2 py-4">
                 <Icon name="GraduationCap" size={24} />
                 <span className="text-sm font-medium">Онлайн-курсы</span>
+              </TabsTrigger>
+              <TabsTrigger value="website" className="flex flex-col items-center gap-2 py-4">
+                <Icon name="Globe" size={24} />
+                <span className="text-sm font-medium">Блог / Визитка</span>
               </TabsTrigger>
             </TabsList>
 
@@ -312,6 +316,68 @@ export default function Index() {
                     period: 'в месяц',
                     description: 'Для крупной платформы',
                     features: ['Неограниченно курсов', 'Неограниченно студентов', 'AI наставник', 'Мобильное приложение', 'White label', 'Персональный менеджер'],
+                    highlighted: false,
+                  },
+                ].map((plan) => (
+                  <Card key={plan.name} className={`relative ${plan.highlighted ? 'border-primary border-2 shadow-xl scale-105' : ''}`}>
+                    {plan.highlighted && (
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                        <Badge className="bg-gradient-to-r from-primary to-secondary text-white">
+                          Популярный
+                        </Badge>
+                      </div>
+                    )}
+                    <CardHeader>
+                      <CardTitle className="text-2xl">{plan.name}</CardTitle>
+                      <CardDescription>{plan.description}</CardDescription>
+                      <div className="mt-4">
+                        <span className="text-4xl font-bold">{plan.price} ₽</span>
+                        <span className="text-muted-foreground ml-2">{plan.period}</span>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <Button className="w-full mb-6" variant={plan.highlighted ? 'default' : 'outline'}>
+                        Выбрать план
+                      </Button>
+                      <ul className="space-y-3">
+                        {plan.features.map((feature) => (
+                          <li key={feature} className="flex items-start gap-2">
+                            <Icon name="Check" size={20} className="text-primary mt-0.5 flex-shrink-0" />
+                            <span className="text-sm">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="website" className="mt-0">
+              <div className="grid md:grid-cols-3 gap-8">
+                {[
+                  {
+                    name: 'Визитка',
+                    price: '0',
+                    period: 'навсегда',
+                    description: 'Для личного бренда',
+                    features: ['До 5 страниц', 'Адаптивный дизайн', 'Контактная форма', 'SEO оптимизация', 'Email поддержка'],
+                    highlighted: false,
+                  },
+                  {
+                    name: 'Блог',
+                    price: '1,490',
+                    period: 'в месяц',
+                    description: 'Для контент-проекта',
+                    features: ['Неограниченно статей', 'Комментарии', 'Подписки и рассылки', 'Медиатека', 'Аналитика посещений', 'Поддержка 24/7'],
+                    highlighted: true,
+                  },
+                  {
+                    name: 'Портал',
+                    price: '5,990',
+                    period: 'в месяц',
+                    description: 'Для медиа-проекта',
+                    features: ['Мультиавторство', 'Модерация контента', 'Монетизация', 'AI помощник редактора', 'Интеграция с соцсетями', 'Персональный менеджер'],
                     highlighted: false,
                   },
                 ].map((plan) => (
