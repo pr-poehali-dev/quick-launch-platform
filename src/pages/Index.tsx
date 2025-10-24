@@ -415,6 +415,80 @@ export default function Index() {
               </div>
             </TabsContent>
           </Tabs>
+
+          <div className="mt-20 max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl font-bold mb-4">Дополнительные услуги</h3>
+              <p className="text-muted-foreground">
+                Усильте свой проект профессиональными услугами нашей команды
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card className="hover:shadow-lg transition-all duration-300">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-4">
+                    <Icon name="Palette" size={24} className="text-white" />
+                  </div>
+                  <CardTitle className="text-xl">Индивидуальный дизайн</CardTitle>
+                  <CardDescription className="text-base mt-2">
+                    Сделаем сайт по вашему уникальному макету с учётом фирменного стиля и требований бренда
+                  </CardDescription>
+                  <div className="mt-4">
+                    <span className="text-2xl font-bold text-primary">от 10 000 ₽</span>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <Button variant="outline" className="w-full">
+                    Заказать дизайн
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-all duration-300">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-4">
+                    <Icon name="Search" size={24} className="text-white" />
+                  </div>
+                  <CardTitle className="text-xl">Настройка SEO</CardTitle>
+                  <CardDescription className="text-base mt-2">
+                    Поможем вашему сайту попасть в топ поиска Google и Яндекс. Комплексная оптимизация для роста трафика
+                  </CardDescription>
+                  <div className="mt-4">
+                    <span className="text-2xl font-bold text-primary">от 5 000 ₽</span>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <Button variant="outline" className="w-full">
+                    Заказать SEO
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-all duration-300 border-secondary border-2">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-4">
+                    <Icon name="ArrowRightLeft" size={24} className="text-white" />
+                  </div>
+                  <CardTitle className="text-xl flex items-center gap-2">
+                    Перенос сайта
+                    <Badge variant="secondary" className="text-xs">Бесплатно</Badge>
+                  </CardTitle>
+                  <CardDescription className="text-base mt-2">
+                    Бесплатно перенесем ваш старый сайт к нам на платформу со всем контентом и настройками
+                  </CardDescription>
+                  <div className="mt-4">
+                    <span className="text-2xl font-bold text-secondary">0 ₽</span>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <Button variant="default" className="w-full">
+                    Заказать перенос
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </div>
       </section>
 
